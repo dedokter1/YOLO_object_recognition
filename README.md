@@ -88,13 +88,6 @@ if np.shape(cvtImg) == ():
                         skinImg = cv2.bitwise_and(skinImg, skinImg, mask = mask)
                         output = cv2.add(invImg, skinImg)
                         cvtImg = cv2.cvtColor(output, cv2.COLOR_YCR_CB2BGR)
-                        
-                        #cvtImg = cv2.cvtColor(cvtImg, cv2.COLOR_BGR2HSV)
-                        #h,s,v = cv2.split(cvtImg)
-                        #hue = hue + 10
-                        #hnew = np.mod(h + hue, 180).astype(np.uint8)
-                        #hsv_new = cv2.merge([hnew,s,v])
-                        #cvtImg = cv2.cvtColor(hsv_new, cv2.COLOR_HSV2BGR)
                     except:
                         print("Couldn't load person image")
                         break
